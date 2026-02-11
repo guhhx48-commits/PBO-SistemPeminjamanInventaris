@@ -1,0 +1,15 @@
+@startuml
+left to right direction
+
+actor "Petugas" as petugas
+
+rectangle "Sistem Informasi Peminjaman Inventaris Kampus" {
+
+  petugas -- (Input Data Peminjam)
+  petugas -- (Input Data Barang)
+  petugas -- (Proses Peminjaman)
+  petugas -- (Lihat Detail Peminjaman)
+
+  (Proses Peminjaman) --> (Simpan Data Peminjaman) : <<include>>
+}
+@enduml
