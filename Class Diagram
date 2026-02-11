@@ -1,0 +1,40 @@
+@startuml
+class Barang {
+  - idBarang : String
+  - namaBarang : String
+  - kondisi : String
+  - status : String
+  + Barang(idBarang, namaBarang, kondisi)
+  + getIdBarang() : String
+  + getNamaBarang() : String
+  + getKondisi() : String
+  + getStatus() : String
+  + setStatus(status : String)
+  + tampilkanInfo() : void
+}
+
+class Peminjam {
+  - idPeminjam : String
+  - nama : String
+  - jurusan : String
+  + Peminjam(idPeminjam, nama, jurusan)
+  + getIdPeminjam() : String
+  + getNama() : String
+  + getJurusan() : String
+  + tampilkanInfo() : void
+}
+
+class Peminjaman {
+  - barang : Barang
+  - peminjam : Peminjam
+  - tanggalPinjam : String
+  + Peminjaman(barang, peminjam, tanggalPinjam)
+  + getBarang() : Barang
+  + getPeminjam() : Peminjam
+  + getTanggalPinjam() : String
+  + tampilkanDetail() : void
+}
+
+Peminjaman --> Barang : meminjam
+Peminjaman --> Peminjam : dilakukan oleh
+@enduml
