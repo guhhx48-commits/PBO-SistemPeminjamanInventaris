@@ -1,0 +1,27 @@
+@startuml
+entity "Peminjam" as peminjam {
+  + id_peminjam : VARCHAR <<PK>>
+  --
+  nama : VARCHAR
+  jurusan : VARCHAR
+}
+
+entity "Barang" as barang {
+  + id_barang : VARCHAR <<PK>>
+  --
+  nama_barang : VARCHAR
+  kondisi : VARCHAR
+  status : VARCHAR
+}
+
+entity "Peminjaman" as peminjaman {
+  + id : INT <<PK>>
+  --
+  tanggal_pinjam : DATE
+  id_peminjam : VARCHAR <<FK>>
+  id_barang : VARCHAR <<FK>>
+}
+
+peminjam ||--o{ peminjaman : melakukan
+barang   ||--o{ peminjaman : dipinjam
+@enduml
